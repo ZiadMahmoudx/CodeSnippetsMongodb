@@ -20,11 +20,14 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <div>
-          <nav className="flex items-center justify-between px-4 py-2 bg-gray-800 text-white shadow-md">
+          <nav className="flex items-center justify-between px-4 py-3 bg-gray-800 text-white shadow-md">
             <Link href="/" passHref>
               <div className="flex items-center">
-                <h1 className="text-xl font-bold">Code Snippets</h1>
-                <FaCode className="ml-1 text-2xl " />
+                {/* Brand Name */}
+                <h1 className="text-lg font-semibold mr-2">Code Snippets</h1>
+
+                {/* Icon */}
+                <FaCode className="text-2xl" />
               </div>
             </Link>
           </nav>

@@ -21,24 +21,26 @@ const ShowSnippetById = async (props: ShowSnippetByIdProps) => {
   const deleteSnippet = actions.deleteSnippetAction.bind(null, snippet.id);
 
   return (
-    <div className=" mx-auto p-3 mt-3 bg-white shadow-md rounded-md">
-      <div className="flex justify-between items-center mb-4">
-        <h1 className="text-3xl font-bold text-gray-800">{snippet.title}</h1>
+    <div className="mx-auto p-3 mt-3 bg-white shadow-md rounded-md sm:w-full md:w-full lg:w-full">
+      <div className="flex flex-col md:flex-row justify-between items-center mb-4">
+        <h1 className="text-2xl md:text-3xl font-bold text-gray-800 mb-2 md:mb-0">
+          {snippet.title}
+        </h1>
         <div className="flex space-x-2">
           <Link
             href={`/snippets/${snippet.id}/edit`}
-            className="bg-blue-500 text-white py-2 px-4 rounded-md mr-2 hover:bg-blue-600 transition duration-300"
+            className="bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-full transition duration-300 flex items-center justify-center"
           >
-            Edit
+            <span className="mr-2">Edit</span>
           </Link>
           <form action={deleteSnippet}>
-            <button className="bg-red-500 text-white  py-2 px-4 rounded-md hover:bg-red-600 transition duration-300">
-              Delete
+            <button className=" py-3 px-6 rounded-full shadow-md bg-red-600 hover:bg-red-700 text-white  transition duration-300 flex items-center justify-center">
+              <span className="mr-2">Delete</span>
             </button>
           </form>
         </div>
       </div>
-      <pre className="bg-gray-100 rounded-md p-4 overflow-auto">
+      <pre className="bg-gray-100 rounded-md p-4 overflow-x-auto text-sm md:text-base">
         <code className="text-gray-800 font-mono">{snippet.code}</code>
       </pre>
     </div>

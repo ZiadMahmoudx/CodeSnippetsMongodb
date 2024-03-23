@@ -16,22 +16,26 @@ const SnippetEditForm = ({ snippet }: SnippetEditFormProps) => {
   const editAction = actions.editSnippetAction.bind(null, snippet.id, code);
   return (
     <div className="mt-4">
-      <Editor
-        height="50vh"
-        defaultValue={snippet.code}
-        theme="vs-dark"
-        language="javascript"
-        options={{ minimap: { enabled: false } }}
-        onChange={handleEditorChange}
-      />
-      <form action={editAction}>
-        <button
-          className="bg-green-700 text-white py-2 px-4 rounded-md mr-2 hover:bg-green-900 transition duration-300"
-          type="submit"
-        >
-          Save
-        </button>
-      </form>
+      <div className="relative">
+        <Editor
+          height="50vh"
+          defaultValue={snippet.code}
+          theme="vs-dark"
+          language="javascript"
+          options={{ minimap: { enabled: false } }}
+          onChange={handleEditorChange}
+        />
+      </div>
+      <div className="mt-4 flex justify-center">
+        <form action={editAction} className="flex">
+          <button
+            className="bg-green-700 text-white  py-3 px-6 rounded-full shadow-md mr-2 hover:bg-green-900 transition duration-300"
+            type="submit"
+          >
+            Save
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

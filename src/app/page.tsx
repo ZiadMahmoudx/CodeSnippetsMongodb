@@ -15,13 +15,15 @@ export default async function Home() {
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold text-gray-800 mb-6">Snippets Area</h1>
+      <h1 className="text-2xl md:text-3xl lg:text-4xl  font-extrabold text-gray-900 mb-8">
+        Explore Snippets
+      </h1>
       <Link href="/snippets/new">
-        <div className="inline-block bg-sky-500 text-white py-2 px-4 rounded-md hover:bg-sky-600 transition duration-300">
+        <button className="bg-sky-500 hover:bg-sky-600 text-white py-3 px-6 rounded-full shadow-md transition duration-300">
           Create New One!
-        </div>
+        </button>
       </Link>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
         {renderedSnippets}
       </div>
     </div>
